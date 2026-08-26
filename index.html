@@ -172,12 +172,87 @@ body{
   transform: translateY(-1px);
 }
 
-.disclaimer{
-  font-size: 11px;
-  color: #9ca3af;
+/* Footer Links & Popups Styling */
+.footer-links{
   margin-top: 20px;
   border-top: 1px solid #f3f4f6;
-  padding-top: 12px;
+  padding-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.footer-links button{
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.footer-links button:hover{
+  color: #1e40af;
+}
+
+.modal{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.modal-content{
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 480px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  text-align: left;
+  position: relative;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h3{
+  margin-bottom: 12px;
+  color: #1e40af;
+  font-size: 18px;
+}
+
+.modal-content p{
+  font-size: 13px;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.close-btn{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #9ca3af;
+  cursor: pointer;
+  border: none;
+  background: none;
+  line-height: 1;
+}
+
+.close-btn:hover{
+  color: #111827;
 }
 </style>
 
@@ -241,13 +316,56 @@ src="https://www.facebook.com/tr?id=1429457832365292&ev=PageView&noscript=1"
     </a>
   </div>
 
-  <div class="disclaimer">
-    Disclaimer: Trading involves market risk. We do not provide guaranteed profits.
+  <div class="footer-links">
+    <button onclick="openModal('modal-disclaimer')">Disclaimer</button>
+    <button onclick="openModal('modal-terms')">Terms & Conditions</button>
+    <button onclick="openModal('modal-about')">About Us</button>
+    <button onclick="openModal('modal-contact')">Contact Us</button>
   </div>
 
 </div>
 
+<!-- Popups Containers -->
+<div id="modal-disclaimer" class="modal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal('modal-disclaimer')">&times;</button>
+    <h3>Disclaimer</h3>
+    <p>Trading in financial markets involves substantial risk of loss and is not suitable for every investor. Valuation of stocks, options, and futures may fluctuate.</p>
+    <p>All content provided by "Trade With Munaaf" is purely for educational purposes and should not be considered financial advice. We do not guarantee profits or provide fixed returns.</p>
+  </div>
+</div>
+
+<div id="modal-terms" class="modal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal('modal-terms')">&times;</button>
+    <h3>Terms & Conditions</h3>
+    <p>By accessing or using our services and Telegram channel, you agree to be bound by these Terms and Conditions.</p>
+    <p>1. <strong>Educational Purpose:</strong> All updates, signals, and charts shared are strictly for learning purposes.</p>
+    <p>2. <strong>User Responsibility:</strong> Any investment decision made by you is solely at your own risk. We are not liable for any financial losses.</p>
+  </div>
+</div>
+
+<div id="modal-about" class="modal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal('modal-about')">&times;</button>
+    <h3>About Us</h3>
+    <p>Welcome to <strong>Trade With Munaaf</strong>!</p>
+    <p>We are a dedicated Telugu-speaking learning community focused on technical analysis, market trends, and risk management strategies. Our goal is to empower stock market enthusiasts with practical knowledge and disciplined trading principles.</p>
+  </div>
+</div>
+
+<div id="modal-contact" class="modal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal('modal-contact')">&times;</button>
+    <h3>Contact Us</h3>
+    <p>For any queries, business opportunities, or feedback, feel free to reach out to us:</p>
+    <p><strong>Telegram Support:</strong> Join our channel and contact the admin directly.</p>
+    <p><strong>Email:</strong> support@tradewithmunaaf.com</p>
+  </div>
+</div>
+
 <script>
+// Timer Logic
 let time = 8;
 const el = document.getElementById("count");
 const timerBox = document.getElementById("timer-box");
@@ -261,6 +379,25 @@ const countdown = setInterval(() => {
     timerBox.innerHTML = "Limited Spots Remaining!";
   }
 }, 1000);
+
+// Modal Functions
+function openModal(id) {
+  document.getElementById(id).style.display = 'flex';
+}
+
+function closeModal(id) {
+  document.getElementById(id).style.display = 'none';
+}
+
+// Close Modal when clicking outside the modal box
+window.onclick = function(event) {
+  const modals = document.querySelectorAll('.modal');
+  modals.forEach(modal => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+};
 </script>
 
 </body>
