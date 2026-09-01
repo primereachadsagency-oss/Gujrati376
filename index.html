@@ -1,258 +1,314 @@
 <!DOCTYPE html>
-<html lang="te">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trade With Munaaf</title>
+<title>Gujarati Trader [[ JIGA BHAI ]]™</title>
+
+<!-- Fonts & Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-body{
-  background: linear-gradient(135deg, #f0f4ff 0%, #e6eefc 100%);
-  color: #1f2937;
+body {
+  background: #090d16;
+  background-image: 
+    radial-gradient(at 100% 0%, rgba(245, 158, 11, 0.12) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(37, 99, 235, 0.1) 0px, transparent 50%);
+  color: #f3f4f6;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 15px;
+  padding: 20px 15px;
 }
 
 .card {
-  background: #ffffff;
+  background: rgba(17, 24, 39, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   width: 100%;
-  max-width: 420px;
-  border-radius: 20px;
-  padding: 28px 20px;
+  max-width: 440px;
+  border-radius: 24px;
+  padding: 32px 24px;
   text-align: center;
-  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(245, 158, 11, 0.05);
+  position: relative;
+  overflow: hidden;
 }
 
-.brand{
-  font-size: 26px;
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #f59e0b, #d97706, #3b82f6);
+}
+
+.brand {
+  font-size: 22px;
   font-weight: 800;
-  color: #1e40af;
-  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
 }
 
-.timer{
-  margin: 12px 0 20px;
-  background: #fee2e2;
-  color: #dc2626;
-  font-weight: 700;
-  font-size: 14px;
-  padding: 8px 16px;
-  border-radius: 30px;
-  display: inline-block;
+.timer {
+  margin-bottom: 22px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #fca5a5;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 8px 18px;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.profile-wrap{
+.timer i {
+  color: #ef4444;
+}
+
+.profile-wrap {
   display: flex;
   justify-content: center;
-  margin: 10px 0 20px;
+  margin-bottom: 20px;
 }
 
-.profile{
-  width: 130px;
-  height: 130px;
+.profile {
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  padding: 5px;
-  background: linear-gradient(135deg, #2563eb, #60a5fa);
-  animation: pulse 2s infinite;
+  padding: 4px;
+  background: linear-gradient(135deg, #f59e0b, #3b82f6);
+  position: relative;
+  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.2);
 }
 
-.profile img{
+.profile img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  background: #fff;
+  background: #1f2937;
+  border: 2px solid #111827;
 }
 
-@keyframes pulse{
-  0%{box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);}
-  70%{box-shadow: 0 0 0 15px rgba(37, 99, 235, 0);}
-  100%{box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);}
+.badge-verified {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background: #3b82f6;
+  color: #fff;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  border: 2px solid #111827;
 }
 
-.sub{
-  font-size: 20px;
+.sub {
+  font-size: 18px;
   font-weight: 700;
-  color: #111827;
+  color: #ffffff;
+  margin-bottom: 6px;
 }
 
-.desc{
-  margin: 8px 0 20px;
-  font-size: 15px;
-  color: #4b5563;
-  line-height: 1.5;
+.desc {
+  font-size: 14px;
+  color: #9ca3af;
+  line-height: 1.6;
+  margin-bottom: 24px;
 }
 
-.btn{
+.btn-primary {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin: 15px 0;
-  background: linear-gradient(90deg, #2563eb, #1d4ed8);
-  color: #fff;
-  padding: 16px;
-  border-radius: 50px;
+  width: 100%;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #000;
+  padding: 16px 20px;
+  border-radius: 14px;
   text-decoration: none;
-  font-size: 17px;
-  font-weight: 700;
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.25);
   transition: all 0.3s ease;
+  margin-bottom: 20px;
 }
 
-.btn:hover{
+.btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.45);
+  box-shadow: 0 12px 30px rgba(245, 158, 11, 0.4);
+  background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
 }
 
-.list{
+.list {
   text-align: left;
-  margin: 20px 0;
-  background: #f8fafc;
-  padding: 15px 20px;
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 18px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.list li{
+.list li {
   list-style: none;
-  padding: 6px 0;
+  padding: 8px 0;
   font-size: 14px;
-  font-weight: 600;
-  color: #334155;
+  font-weight: 500;
+  color: #e5e7eb;
   display: flex;
   align-items: center;
 }
 
-.list li::before{
-  content: "✔";
-  color: #16a34a;
-  font-weight: bold;
-  margin-right: 10px;
-  background: #dcfce7;
-  width: 20px;
-  height: 20px;
+.list li:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.list li i {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
+  font-size: 12px;
+  margin-right: 12px;
+  flex-shrink: 0;
 }
 
-.netad-btn{
+.netad-btn {
   margin-top: 20px;
+  margin-bottom: 15px;
 }
 
-.netad-btn a{
-  display: inline-block;
-  padding: 8px 18px;
-  font-size: 11px;
+.netad-btn a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.5px;
   text-decoration: none;
-  border-radius: 40px;
-  color: #854d0e;
-  background: #fef9c3;
-  border: 1px solid #fde047;
-  transition: all .3s ease;
+  border-radius: 30px;
+  color: #fbbf24;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  transition: all 0.3s ease;
 }
 
-.netad-btn a:hover{
-  background: #fef08a;
-  transform: translateY(-1px);
+.netad-btn a:hover {
+  background: rgba(245, 158, 11, 0.15);
 }
 
-/* Footer Links & Popups Styling */
-.footer-links{
-  margin-top: 20px;
-  border-top: 1px solid #f3f4f6;
-  padding-top: 14px;
+.footer-links {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 16px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
 }
 
-.footer-links button{
+.footer-links button {
   background: none;
   border: none;
   color: #6b7280;
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 500;
   cursor: pointer;
-  text-decoration: underline;
   transition: color 0.2s;
 }
 
-.footer-links button:hover{
-  color: #1e40af;
+.footer-links button:hover {
+  color: #f59e0b;
 }
 
-.modal{
+/* Modal Popup Styling */
+.modal {
   display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
   z-index: 1000;
   align-items: center;
   justify-content: center;
-  padding: 15px;
+  padding: 20px;
 }
 
-.modal-content{
-  background-color: #ffffff;
-  border-radius: 16px;
-  padding: 24px;
+.modal-content {
+  background-color: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 28px;
   max-width: 480px;
   width: 100%;
   max-height: 80vh;
   overflow-y: auto;
   text-align: left;
   position: relative;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  color: #d1d5db;
 }
 
-.modal-content h3{
-  margin-bottom: 12px;
-  color: #1e40af;
-  font-size: 18px;
+.modal-content h3 {
+  margin-bottom: 14px;
+  color: #f59e0b;
+  font-size: 20px;
 }
 
-.modal-content p{
-  font-size: 13px;
-  color: #4b5563;
+.modal-content p {
+  font-size: 14px;
   line-height: 1.6;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  color: #9ca3af;
 }
 
-.close-btn{
+.modal-content p strong {
+  color: #f3f4f6;
+}
+
+.close-btn {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  font-size: 22px;
-  font-weight: bold;
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
   color: #9ca3af;
   cursor: pointer;
   border: none;
   background: none;
-  line-height: 1;
 }
 
-.close-btn:hover{
-  color: #111827;
+.close-btn:hover {
+  color: #ffffff;
 }
 </style>
 
@@ -261,7 +317,7 @@ body{
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+if(!f._fbq)f._fbq=n;n.push=n,n.loaded=!0;n.version='2.0';
 n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
@@ -279,40 +335,44 @@ src="https://www.facebook.com/tr?id=1429457832365292&ev=PageView&noscript=1"
 
 <div class="card">
 
-  <div class="brand">Trade With Munaaf</div>
-  <div class="timer" id="timer-box">Offer closes in <span id="count">08</span>s</div>
+  <div class="brand">Gujarati Trader [[ JIGA BHAI ]]™</div>
+  
+  <div class="timer" id="timer-box">
+    <i class="fa-solid fa-clock"></i> Offer closes in <span id="count">08</span>s
+  </div>
 
   <div class="profile-wrap">
     <div class="profile">
-      <img src="Munaaf.jpeg" alt="Munaaf">
+      <img src="Munaaf.jpeg" alt="Jiga Bhai">
+      <div class="badge-verified"><i class="fa-solid fa-check"></i></div>
     </div>
   </div>
 
-  <div class="sub">Learning Community</div>
+  <div class="sub">Exclusive Learning Community</div>
 
   <div class="desc">
-    మార్కెట్ మూవ్స్ ని అర్థం చేసుకునే స్మార్ట్ ట్రేడింగ్ కమ్యూనిటీ
+    Master market movements with disciplined strategies, real-time insights, and smart trading setups.
   </div>
 
-  <a href="https://t.me/+mVDd7KcIWikzYTNl" class="btn">
-    JOIN NOW FOR FREE
+  <a href="https://t.me/+mVDd7KcIWikzYTNl" class="btn-primary">
+    <i class="fa-paper-plane"></i> JOIN NOW FOR FREE
   </a>
 
   <ul class="list">
-    <li>5+ Years Trading Experience</li>
-    <li>Daily Telugu Market Insights</li>
-    <li>Proper Risk Management</li>
-    <li>Learning Focused Community</li>
-    <li>Beginner Friendly</li>
+    <li><i class="fa-solid fa-check"></i> 5+ Years Trading Experience</li>
+    <li><i class="fa-solid fa-check"></i> Daily Stock & Index Insights</li>
+    <li><i class="fa-solid fa-check"></i> Strict Risk Management Rules</li>
+    <li><i class="fa-solid fa-check"></i> Educational & Strategy Community</li>
+    <li><i class="fa-solid fa-check"></i> Beginner Friendly Approach</li>
   </ul>
 
-  <a href="https://t.me/+mVDd7KcIWikzYTNl" class="btn">
-    JOIN NOW FOR FREE
+  <a href="https://t.me/+mVDd7KcIWikzYTNl" class="btn-primary">
+    <i class="fa-paper-plane"></i> JOIN NOW FOR FREE
   </a>
 
   <div class="netad-btn">
     <a href="https://t.me/+UyYzth29HpY4MDVl" target="_blank">
-      ✦ Advertising by Digital Ads Expert
+      <i class="fa-solid fa-wand-magic-sparkles"></i> Advertising by Digital Ads Expert
     </a>
   </div>
 
@@ -331,7 +391,7 @@ src="https://www.facebook.com/tr?id=1429457832365292&ev=PageView&noscript=1"
     <button class="close-btn" onclick="closeModal('modal-disclaimer')">&times;</button>
     <h3>Disclaimer</h3>
     <p>Trading in financial markets involves substantial risk of loss and is not suitable for every investor. Valuation of stocks, options, and futures may fluctuate.</p>
-    <p>All content provided by "Trade With Munaaf" is purely for educational purposes and should not be considered financial advice. We do not guarantee profits or provide fixed returns.</p>
+    <p>All content provided by <strong>Gujarati Trader [[ JIGA BHAI ]]™</strong> is purely for educational purposes and should not be considered financial advice. We do not guarantee profits or provide fixed returns.</p>
   </div>
 </div>
 
@@ -349,8 +409,8 @@ src="https://www.facebook.com/tr?id=1429457832365292&ev=PageView&noscript=1"
   <div class="modal-content">
     <button class="close-btn" onclick="closeModal('modal-about')">&times;</button>
     <h3>About Us</h3>
-    <p>Welcome to <strong>Trade With Munaaf</strong>!</p>
-    <p>We are a dedicated Telugu-speaking learning community focused on technical analysis, market trends, and risk management strategies. Our goal is to empower stock market enthusiasts with practical knowledge and disciplined trading principles.</p>
+    <p>Welcome to <strong>Gujarati Trader [[ JIGA BHAI ]]™</strong>!</p>
+    <p>We are a dedicated learning community focused on technical analysis, market trends, and risk management strategies. Our goal is to empower stock market enthusiasts with practical knowledge and disciplined trading principles.</p>
   </div>
 </div>
 
@@ -360,7 +420,7 @@ src="https://www.facebook.com/tr?id=1429457832365292&ev=PageView&noscript=1"
     <h3>Contact Us</h3>
     <p>For any queries, business opportunities, or feedback, feel free to reach out to us:</p>
     <p><strong>Telegram Support:</strong> Join our channel and contact the admin directly.</p>
-    <p><strong>Email:</strong> support@tradewithmunaaf.com</p>
+    <p><strong>Email:</strong> support@gujaratitrader.com</p>
   </div>
 </div>
 
@@ -376,7 +436,7 @@ const countdown = setInterval(() => {
     el.innerText = time < 10 ? '0' + time : time;
   } else {
     clearInterval(countdown);
-    timerBox.innerHTML = "Limited Spots Remaining!";
+    timerBox.innerHTML = '<i class="fa-solid fa-bolt"></i> Limited Spots Remaining!';
   }
 }, 1000);
 
