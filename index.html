@@ -1,330 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝐆𝐮𝐣𝐚𝐫𝐚𝐭𝐢 𝐓𝐫𝐚𝐝𝐞𝐫 [ 𝐉𝐈𝐆𝐀 𝐁𝐇𝐀𝐈 ]™</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gujarati Trader™</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        body {
-            background-color: #121212;
-            background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 20px 20px;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
+    body {
+      background-color: #0b0c10;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
 
-        .container {
-            width: 100%;
-            max-width: 400px;
-            background-color: #1e1e1e;
-            border-radius: 24px;
-            padding: 30px 20px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 1px solid #2a2a2a;
-        }
+    /* Main Container Card */
+    .card-container {
+      background-color: #121318;
+      border: 1.5px solid #d4af37;
+      border-radius: 28px;
+      width: 100%;
+      max-width: 420px;
+      padding: 30px 24px;
+      text-align: center;
+      box-shadow: 0px 0px 25px rgba(212, 175, 55, 0.15);
+      position: relative;
+    }
 
-        /* Profile Image */
-        .profile-container {
-            width: 140px;
-            height: 140px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            border: 4px solid #ffcc00;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    /* Logo Area */
+    .logo-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
 
-        .profile-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    .logo-circle {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #3a3f4d 0%, #1a1c23 100%);
+      border: 2px solid #ffd700;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+    }
 
-        /* Headings & Badges */
-        .title {
-            font-size: 22px;
-            font-weight: 800;
-            color: #ffcc00;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
-            line-height: 1.3;
-        }
+    .logo-text-guj {
+      color: #e0e0e0;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
 
-        .subtitle {
-            font-size: 16px;
-            color: #d1d1d1;
-            margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-        }
+    .logo-text-eng {
+      color: #00e676;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
 
-        .check-green { color: #28a745; }
+    .crown {
+      font-size: 1.2rem;
+      margin: 2px 0;
+    }
 
-        /* Quick Info Pills */
-        .info-pill {
-            background-color: #2a2a2a;
-            color: #ffffff;
-            padding: 12px 20px;
-            border-radius: 12px;
-            font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
+    .title {
+      font-size: 1.6rem;
+      color: #ffcc00;
+      font-weight: 800;
+      text-transform: lowercase;
+    }
 
-        /* Main Telegram Button */
-        .btn-telegram {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background-color: #0088cc;
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 700;
-            padding: 16px 20px;
-            border-radius: 30px;
-            margin: 20px 0;
-            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
-            transition: background-color 0.2s ease;
-        }
+    .subtitle {
+      color: #a0a5b5;
+      font-size: 0.9rem;
+      margin-top: 4px;
+      margin-bottom: 20px;
+    }
 
-        .btn-telegram:hover { background-color: #0077b5; }
+    /* Badges & Tags */
+    .badge-members {
+      background-color: #1a1c23;
+      border: 1px solid #2a2d3a;
+      border-radius: 12px;
+      padding: 12px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #d1d5db;
+      margin-bottom: 12px;
+    }
 
-        /* Feature List Pills */
-        .feature-pill {
-            background-color: #262626;
-            border: 1px solid #333333;
-            color: #ffffff;
-            padding: 14px 16px;
-            border-radius: 14px;
-            font-size: 15px;
-            font-weight: 500;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-align: left;
-        }
+    .highlight-green {
+      color: #00e676;
+      font-weight: 700;
+    }
 
-        .feature-pill i {
-            color: #28a745;
-            font-size: 16px;
-        }
+    .tags-row {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 22px;
+    }
 
-        /* Footer Links */
-        .footer-links {
-            margin-top: 25px;
-            padding-top: 15px;
-            border-top: 1px solid #333333;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-        }
+    .tag {
+      background-color: #1a1c23;
+      border: 1px solid #2a2d3a;
+      border-radius: 10px;
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      color: #b0b5c0;
+    }
 
-        .footer-links button {
-            background: none;
-            border: none;
-            color: #888888;
-            font-size: 12px;
-            cursor: pointer;
-            transition: color 0.2s ease;
-            text-decoration: underline;
-        }
+    /* Telegram Glowing Button */
+    .telegram-btn {
+      display: block;
+      width: 100%;
+      background-color: #0099ff;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-decoration: none;
+      padding: 14px 0;
+      border-radius: 25px;
+      margin-bottom: 22px;
+      box-shadow: 0 0 20px rgba(0, 153, 255, 0.6);
+      animation: pulse-glow 2s infinite alternate;
+      transition: transform 0.2s ease;
+    }
 
-        .footer-links button:hover { color: #ffffff; }
+    .telegram-btn:hover {
+      transform: scale(1.02);
+    }
 
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            padding: 20px;
-        }
+    @keyframes pulse-glow {
+      0% {
+        box-shadow: 0 0 12px rgba(0, 153, 255, 0.4);
+      }
+      100% {
+        box-shadow: 0 0 24px rgba(0, 153, 255, 0.9);
+      }
+    }
 
-        .modal-content {
-            background-color: #242424;
-            color: #dddddd;
-            border-radius: 16px;
-            width: 100%;
-            max-width: 450px;
-            max-height: 80vh;
-            overflow-y: auto;
-            padding: 24px;
-            position: relative;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
-            text-align: left;
-            border: 1px solid #333;
-        }
+    /* Features List */
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
 
-        .modal-content h2 {
-            color: #ffcc00;
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
+    .feature-item {
+      background-color: #17181f;
+      border: 1px solid #242735;
+      border-radius: 12px;
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 0.9rem;
+      color: #e0e0e0;
+    }
 
-        .modal-content p {
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 12px;
-        }
+    .check-icon {
+      color: #00e676;
+      margin-right: 8px;
+      font-weight: bold;
+    }
 
-        .close-btn {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: none;
-            border: none;
-            color: #aaaaaa;
-            font-size: 22px;
-            cursor: pointer;
-        }
+    .tagline {
+      color: #00aaff;
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
 
-        .close-btn:hover { color: #ffffff; }
-    </style>
+    /* Footer Links & Modals */
+    .footer-links {
+      font-size: 0.75rem;
+      color: #6c727f;
+    }
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1850343399676471');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1850343399676471&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-    
+    .footer-links button {
+      background: none;
+      border: none;
+      color: #8a90a0;
+      cursor: pointer;
+      font-size: 0.75rem;
+      text-decoration: underline;
+    }
+
+    .footer-links button:hover {
+      color: #ffffff;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.75);
+    }
+
+    .modal-content {
+      background-color: #1a1c23;
+      margin: 15% auto;
+      padding: 24px;
+      border: 1px solid #333;
+      border-radius: 16px;
+      width: 85%;
+      max-width: 400px;
+      color: #ccc;
+      text-align: left;
+      line-height: 1.5;
+    }
+
+    .modal-content h2 {
+      color: #ffcc00;
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+    }
+
+    .close-btn {
+      color: #aaa;
+      float: right;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="profile-container">
-            <img src="Gujrati.jpeg" alt="Gujarati Trader Profile">
-        </div>
-
-        <h1 class="title">
-            <i class="fa-solid fa-crown"></i> 𝐆𝐮𝐣𝐚𝐫𝐚𝐭𝐢 𝐓𝐫𝐚𝐝𝐞𝐫 [ 𝐉𝐈𝐆𝐀 𝐁𝐇𝐀𝐈 ]™ <i class="fa-solid fa-crown"></i>
-        </h1>
-
-        <div class="subtitle">
-            <i class="fa-solid fa-square-check check-green"></i> Trusted by thousands of learners
-        </div>
-
-        <div class="info-pill">24/7 Updates</div>
-        <div class="info-pill">Free to Join</div>
-
-        <a href="https://t.me/+mVDd7KcIWikzYTNl" class="btn-telegram" target="_blank">
-            <i class="fa-paper-plane fa-solid"></i> Join on Telegram
-        </a>
-
-        <div class="feature-pill">
-            <i class="fa-solid fa-circle-check"></i> Market Insights & Discussions
-        </div>
-        <div class="feature-pill">
-            <i class="fa-solid fa-circle-check"></i> Learn with Experts
-        </div>
-        <div class="feature-pill">
-            <i class="fa-solid fa-circle-check"></i> Practical Strategies
-        </div>
-
-        <div class="footer-links">
-            <button onclick="openModal('modal-about')">About Us</button>
-            <button onclick="openModal('modal-terms')">Terms & Conditions</button>
-            <button onclick="openModal('modal-disclaimer')">Disclaimer</button>
-            <button onclick="openModal('modal-contact')">Contact Us</button>
-        </div>
+  <div class="card-container">
+    
+    <!-- Profile Logo -->
+    <div class="logo-wrapper">
+      <div class="logo-circle">
+        <span class="logo-text-guj">ગુજરાતી</span>
+        <span class="logo-text-eng">TRADER</span>
+      </div>
     </div>
 
-    <div id="modal-about" class="modal">
-        <div class="modal-content">
-            <button class="close-btn" onclick="closeModal('modal-about')">&times;</button>
-            <h2>About Us</h2>
-            <p>Welcome to 𝐆𝐮𝐣𝐚𝐫𝐚𝐭𝐢 𝐓𝐫𝐚𝐝𝐞𝐫 [ 𝐉𝐈𝐆𝐀 𝐁𝐇𝐀𝐈 ]™. We provide educational content, stock market insights, and trading strategies to help users learn and grow.</p>
-            <p>Our aim is to build a strong community of market enthusiasts through real-time updates and expert advice.</p>
-        </div>
+    <!-- Title & Crown -->
+    <div class="crown">👑</div>
+    <h1 class="title">gujarati trader™</h1>
+    <div class="crown">👑</div>
+    <p class="subtitle">✓ Trusted learning community</p>
+
+    <!-- Active Members Count with Animation ID -->
+    <div class="badge-members">
+      👥 Active Members: <span id="memberCounter" class="highlight-green">0</span>
     </div>
 
-    <div id="modal-terms" class="modal">
-        <div class="modal-content">
-            <button class="close-btn" onclick="closeModal('modal-terms')">&times;</button>
-            <h2>Terms & Conditions</h2>
-            <p>1. The content provided is strictly for educational and informational purposes.</p>
-            <p>2. Joining our Telegram channel does not guarantee financial returns or financial advisory services.</p>
-            <p>3. Users are advised to trade and invest at their own risk.</p>
-        </div>
+    <!-- Features Badges -->
+    <div class="tags-row">
+      <span class="tag">24/7 Updates</span>
+      <span class="tag">Free to Join</span>
     </div>
 
-    <div id="modal-disclaimer" class="modal">
-        <div class="modal-content">
-            <button class="close-btn" onclick="closeModal('modal-disclaimer')">&times;</button>
-            <h2>Disclaimer</h2>
-            <p>We are not SEBI registered advisors. All market insights shared are purely for educational purposes.</p>
-            <p>Trading in financial markets involves high risk. Please consult a certified financial advisor before making any investment decisions.</p>
-        </div>
+    <!-- Telegram Button with Updated Link -->
+    <a href="https://t.me/+mVDd7KcIWikzYTNl" target="_blank" class="telegram-btn">
+      🚀 Join on Telegram +
+    </a>
+
+    <!-- Points -->
+    <div class="feature-list">
+      <div class="feature-item">
+        <span class="check-icon">✓</span> Market Insights & Discussions
+      </div>
+      <div class="feature-item">
+        <span class="check-icon">✓</span> Learn with Experts
+      </div>
+      <div class="feature-item">
+        <span class="check-icon">✓</span> Practical Strategies
+      </div>
     </div>
 
-    <div id="modal-contact" class="modal">
-        <div class="modal-content">
-            <button class="close-btn" onclick="closeModal('modal-contact')">&times;</button>
-            <h2>Contact Us</h2>
-            <p>Have any questions or need support? Get in touch with us:</p>
-            <p><strong>Email:</strong> support@gujaratitrader.com</p>
-            <p><strong>Telegram Support:</strong> @gujaratitrader_support</p>
-        </div>
+    <p class="tagline">⚡ Stay Ahead with Smart Learning</p>
+
+    <!-- Footer Links -->
+    <div class="footer-links">
+      <button onclick="openModal('about')">About</button> | 
+      <button onclick="openModal('terms')">Terms</button> | 
+      <button onclick="openModal('contact')">Contact Us</button> | 
+      <button onclick="openModal('disclaimer')">Disclaimer</button>
     </div>
 
-    <script>
-        function openModal(id) {
-            document.getElementById(id).style.display = 'flex';
+  </div>
+
+  <!-- Popup Modal -->
+  <div id="popupModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle">Title</h2>
+      <div id="modalBody">Body Content</div>
+    </div>
+  </div>
+
+  <script>
+    // Counting Animation Logic
+    function animateCounter(targetNumber, duration) {
+      const counterElement = document.getElementById("memberCounter");
+      let startTimestamp = null;
+
+      function step(timestamp) {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        
+        // Easing function for smooth slowdown near the end
+        const easeOutProgress = 1 - Math.pow(1 - progress, 3);
+        const currentCount = Math.floor(easeOutProgress * targetNumber);
+        
+        // Format with comma separation (e.g., 100,003)
+        counterElement.innerText = currentCount.toLocaleString();
+
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        } else {
+          counterElement.innerText = targetNumber.toLocaleString();
         }
+      }
 
-        function closeModal(id) {
-            document.getElementById(id).style.display = 'none';
-        }
+      window.requestAnimationFrame(step);
+    }
 
-        // Close modal when clicking outside content area
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = 'none';
-            }
-        }
-    </script>
+    // Run animation on page load (100,003 target over 2.5 seconds)
+    window.addEventListener("DOMContentLoaded", () => {
+      animateCounter(100003, 2500);
+    });
 
+    // Modal Data
+    const modalData = {
+      about: {
+        title: "About Us",
+        content: "Gujarati Trader™ is an educational community focused on providing market insights, learning resources, and practical strategies for trading enthusiasm."
+      },
+      terms: {
+        title: "Terms & Conditions",
+        content: "By joining this channel, you agree that all shared insights are strictly for educational and informational purposes only."
+      },
+      contact: {
+        title: "Contact Us",
+        content: "For inquiries and support, please reach out via Telegram direct message to our official admin handle."
+      },
+      disclaimer: {
+        title: "Disclaimer",
+        content: "We are not SEBI-registered advisors. Stock market trading and investments carry financial risk. Always consult a certified financial advisor before making any investment decisions."
+      }
+    };
+
+    function openModal(type) {
+      const modal = document.getElementById("popupModal");
+      document.getElementById("modalTitle").innerText = modalData[type].title;
+      document.getElementById("modalBody").innerText = modalData[type].content;
+      modal.style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("popupModal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("popupModal");
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
 </body>
 </html>
